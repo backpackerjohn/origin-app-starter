@@ -1,54 +1,59 @@
-# Welcome to your Lovable project
+# Brain Dump App
+
+An intelligent thought organization and clustering system built with AI-powered connections.
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/d02725aa-d261-4809-9cbc-34352eb3d22c
+**Repository**: https://github.com/backpackerjohn/origin-app-starter
 
-## How can I edit this code?
+**Lovable Project**: https://lovable.dev/projects/d02725aa-d261-4809-9cbc-34352eb3d22c
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- 🧠 **Brain Dump**: Capture thoughts quickly and organize them intelligently
+- 🔗 **AI-Powered Connections**: Automatically find relationships between your thoughts
+- 📊 **Smart Clustering**: Group related thoughts into meaningful clusters
+- 🏷️ **Category Management**: Organize thoughts with AI-suggested categories
+- 📦 **Archive System**: Keep your workspace clean while preserving history
+- 🔐 **Secure Authentication**: Built with Supabase authentication
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d02725aa-d261-4809-9cbc-34352eb3d22c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## How to run locally
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/backpackerjohn/origin-app-starter.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd origin-app-starter
 
-# Step 3: Install the necessary dependencies.
+# Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## How to edit this code
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Use Lovable**
+
+Visit the [Lovable Project](https://lovable.dev/projects/d02725aa-d261-4809-9cbc-34352eb3d22c) and start prompting. Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+You can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+**Edit directly in GitHub**
+
+- Navigate to the desired file(s)
+- Click the "Edit" button (pencil icon) at the top right
+- Make your changes and commit
 
 **Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Click the "Code" button near the top right
+- Select the "Codespaces" tab
+- Click "New codespace" to launch a new environment
 
 ## What technologies are used for this project?
 
@@ -60,14 +65,28 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/d02725aa-d261-4809-9cbc-34352eb3d22c) and click on Share -> Publish.
+Deploy via [Lovable](https://lovable.dev/projects/d02725aa-d261-4809-9cbc-34352eb3d22c):
+1. Open your Lovable project
+2. Click Share → Publish
+3. Your app will be deployed automatically
 
-## Can I connect a custom domain to my Lovable project?
+## Custom Domain
 
-Yes, you can!
+To connect a custom domain:
+1. Navigate to Project > Settings > Domains
+2. Click Connect Domain
+3. Follow the setup instructions
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Read more: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Database
+
+This project uses Supabase for:
+- PostgreSQL database
+- Authentication
+- Edge Functions for AI processing
+- Real-time subscriptions
+
+See the `/supabase` directory for migrations and functions.
