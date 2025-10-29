@@ -1,1 +1,16 @@
-project_id = "kogvkrtdnwgnifazttgd"
+project_id = "tmhguhdpauvmwcefmebi"
+
+[functions.process-thought]
+verify_jwt = true
+
+[functions.generate-clusters]
+verify_jwt = true
+
+[functions.find-connections]
+verify_jwt = true
+
+[functions.find-related-thoughts]
+verify_jwt = true
+
+[functions.suggest-categories]
+verify_jwt = true

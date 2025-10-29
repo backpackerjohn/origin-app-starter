@@ -41,7 +41,8 @@ function parseGeminiResponse(data: any): any {
     return JSON.parse(text);
   } catch (parseError) {
     console.error('Failed to parse Gemini response:', text);
-    throw new Error(`Invalid JSON response from Gemini: ${parseError.message}`);
+    const errorMessage = parseError instanceof Error ? parseError.message : String(parseError);
+    throw new Error(`Invalid JSON response from Gemini: ${errorMessage}`);
   }
 }
 

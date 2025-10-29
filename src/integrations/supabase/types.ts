@@ -33,32 +33,72 @@ export type Database = {
           name?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "categories_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       clusters: {
         Row: {
           created_at: string
+          description: string | null
           id: string
-          is_collapsed: boolean
           is_manual: boolean
           name: string
+          updated_at: string
           user_id: string
         }
         Insert: {
           created_at?: string
+          description?: string | null
           id?: string
-          is_collapsed?: boolean
           is_manual?: boolean
           name: string
+          updated_at?: string
           user_id: string
         }
         Update: {
           created_at?: string
+          description?: string | null
           id?: string
-          is_collapsed?: boolean
           is_manual?: boolean
           name?: string
+          updated_at?: string
           user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "clusters_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -99,19 +139,16 @@ export type Database = {
         Row: {
           cluster_id: string
           created_at: string
-          is_completed: boolean
           thought_id: string
         }
         Insert: {
           cluster_id: string
           created_at?: string
-          is_completed?: boolean
           thought_id: string
         }
         Update: {
           cluster_id?: string
           created_at?: string
-          is_completed?: boolean
           thought_id?: string
         }
         Relationships: [
@@ -136,52 +173,61 @@ export type Database = {
           content: string
           created_at: string
           embedding: string | null
-          embedding_failed: boolean | null
-          embedding_retry_count: number | null
           id: string
           is_completed: boolean
-          last_embedding_attempt: string | null
           snippet: string | null
           status: string
           title: string
+          updated_at: string
           user_id: string
         }
         Insert: {
           content: string
           created_at?: string
           embedding?: string | null
-          embedding_failed?: boolean | null
-          embedding_retry_count?: number | null
           id?: string
           is_completed?: boolean
-          last_embedding_attempt?: string | null
           snippet?: string | null
           status?: string
           title: string
+          updated_at?: string
           user_id: string
         }
         Update: {
           content?: string
           created_at?: string
           embedding?: string | null
-          embedding_failed?: boolean | null
-          embedding_retry_count?: number | null
           id?: string
           is_completed?: boolean
-          last_embedding_attempt?: string | null
           snippet?: string | null
           status?: string
           title?: string
+          updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "thoughts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      add_category_to_thought: {
+        Args: {
+          p_category_name: string
+          p_thought_id: string
+          p_user_id: string
+        }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
